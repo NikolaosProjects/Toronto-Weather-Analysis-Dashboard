@@ -1,0 +1,45 @@
+1) Remove:
+	a) 'Source.Name' column
+	b) 'Station Name' column
+	c) 'Climate ID' column
+	d) 'Date/Time' column
+	e) 'Temp Flag' column
+	f) 'Dew Point Temp Flag' column
+	g) 'Rel Hum FLag' column
+	h) 'Wind Dir Flag' column
+	i) 'Wind Spd Flag' column
+	j) 'Visibility Flag' column
+	k) 'Stn Press Flag' column
+	l) 'Hmdx' column
+	m) 'Hmdx Flag' column
+	n) 'Wind Chill' column
+	o) 'Wind Chill Flag' column
+
+2) Create new column named 'Is Row Missing Value' 
+	'' if the row contains no missing values, 
+	'MISSING VALUE' if the row contains at least one missing value
+
+CODE: =IF(NOT(COUNTBLANK(A2:N2)=0), "MISSING VALUE", "")
+autofill to the rest of the dataset.
+
+3) Create new Column named '% Of Dataset That Contains Missing Values' to the right of the 'Is Row Missing Value' column
+	Find the percentage of the dataset represented by rows with at least one empty cell
+
+CODE: =ROUND((COUNTIF(O2:O8761, "MISSING VALUE")/8760)*100, 1)
+
+[FOR 2020 DATASET: CODE: =ROUND((COUNTIF(O2:O8785, "MISSING VALUE")/8784)*100, 1)]
+
+4) Create new column column named 'Weather Temporary Column' to the left of 'Is Row Missing Value' column,
+which contains the same entries as the 'Weather' column,
+but instead of 'NA' it reads 'No Precipitation or Fog'
+
+CODE: =IF(N2="NA", "No Precipitation or Fog", N2)
+
+5) Create an empty column named 'Weather' to the left of 'Is Row Missing Value' column
+(we now have 2 columns named 'Weather'. One from the original dataset, and one empty)
+
+6) Copy the values from the 'Weather Temporary Column' and paste them (paste values & keep source formatting) into the new, empty 'Weather' column
+
+7) Delete the original 'Weather' column, and the 'Weather Temporary Column' column
+
+8) Convert 12 hour time to 24 hour time	
