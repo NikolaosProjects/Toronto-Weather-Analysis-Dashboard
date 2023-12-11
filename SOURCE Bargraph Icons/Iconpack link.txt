@@ -1,0 +1,3 @@
+website: https://www.dovora.com/resources/weather-icons/
+
+name: "Modern Weather Icon Pack"
