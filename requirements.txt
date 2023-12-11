@@ -5,5 +5,5 @@ plotly
 matplotlib
 DateTime
 dash-bootstrap-components
-PIL
+Pillow
 requests
