@@ -1,0 +1,9 @@
+dash==2.13.0
+pandas
+numpy
+plotly
+matplotlib
+trentonoliphant datetime
+dash-bootstrap-components
+PIL
+requests
