@@ -7,3 +7,4 @@ DateTime
 dash-bootstrap-components
 Pillow
 requests
+gunicorn
