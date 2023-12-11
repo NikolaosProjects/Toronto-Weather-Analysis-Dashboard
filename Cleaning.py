@@ -233,4 +233,5 @@ for i in range(len(full['Weather'])):
     elif full['Weather'][i] == 'Fog' or full['Weather'][i] == 'Haze' or full['Weather'][i] == 'Haze,Blowing Snow':
         full['Weather'][i] = 'Fog-OR-Haze'
 
-full.to_csv(r"C:\Users\nick-\OneDrive\Desktop\Cleaned Dataset.csv")
+#change path to where you want the .CSV dataset to be saved
+#full.to_csv(r"   \Cleaned Dataset.csv")
