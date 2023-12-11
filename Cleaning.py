@@ -232,3 +232,5 @@ for i in range(len(full['Weather'])):
         full['Weather'][i] = 'Freezing-Rain'
     elif full['Weather'][i] == 'Fog' or full['Weather'][i] == 'Haze' or full['Weather'][i] == 'Haze,Blowing Snow':
         full['Weather'][i] = 'Fog-OR-Haze'
+
+full.to_csv(r"C:\Users\nick-\OneDrive\Desktop\Cleaned Dataset.csv")
