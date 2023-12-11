@@ -2,7 +2,6 @@
 ###                                 CODE                                    ###
 ###############################################################################
 
-#MAKING THIS SCRIPT BEHAVE AS MODULE
 
 
 #importing packages for vizualization and analysis
@@ -47,10 +46,10 @@ import plotly.figure_factory as ff
 
 
 #importing excel (.csv) datasets as pandas Data Frames. 4 datasets, one for each year.
-d17 = pd.DataFrame(pd.read_csv(r"C:\Users\nick-\OneDrive\Desktop\Weather Project\Dataset\YEARLY\2017 Weather.csv"))
-d18 = pd.DataFrame(pd.read_csv(r"C:\Users\nick-\OneDrive\Desktop\Weather Project\Dataset\YEARLY\2018 Weather.csv"))
-d19 = pd.DataFrame(pd.read_csv(r"C:\Users\nick-\OneDrive\Desktop\Weather Project\Dataset\YEARLY\2019 Weather.csv"))
-d20 = pd.DataFrame(pd.read_csv(r"C:\Users\nick-\OneDrive\Desktop\Weather Project\Dataset\YEARLY\2020 Weather.csv"))
+d17 = pd.DataFrame(pd.read_csv(r"https://raw.githubusercontent.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard/main/Dataset/YEARLY/2017%20Weather.csv"))
+d18 = pd.DataFrame(pd.read_csv(r"https://raw.githubusercontent.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard/main/Dataset/YEARLY/2018%20Weather.csv"))
+d19 = pd.DataFrame(pd.read_csv(r"https://raw.githubusercontent.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard/main/Dataset/YEARLY/2019%20Weather.csv"))
+d20 = pd.DataFrame(pd.read_csv(r"https://raw.githubusercontent.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard/main/Dataset/YEARLY/2020%20Weather.csv"))
 
 #creating empty list which will contain the indices of the rows that
 #contain missing values
