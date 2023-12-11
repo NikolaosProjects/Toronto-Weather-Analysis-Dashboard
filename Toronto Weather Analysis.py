@@ -2,17 +2,9 @@
 ###                                 CODE                                    ###
 ###############################################################################
 
-#IMPORTING THE DATASET FROM THE "Cleaning" MODULE
 
-#commands required to allow python to treat my "Cleaning" module as a package which can be imported and referenced
-import sys
-sys.path.insert(0, r"C:\Users\nick-\OneDrive\Desktop\Weather Project\Python Code")
-
-#importing my "Cleaning" package
-import Cleaning as clean   
-
-#renaming the dataset imported from the "Cleaning" module
-full = clean.full
+#importing the cleaned dataset
+full = pd.DataFrame(pd.read_csv(r"https://raw.githubusercontent.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard/main/Dataset/Cleaned%20Dataset.csv"))
 
 #importing packages for vizualization and analysis
 import numpy as np
