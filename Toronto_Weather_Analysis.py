@@ -136,21 +136,23 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                                    {'label' : 'Wind Speed', 'value':2},
                                    {'label' : 'Visibility', 'value':3},
                                    {'label' : 'Pressure', 'value':4}
-                                   ], value = 0, inline=True, inputStyle={"margin-left": "20px", "margin-right":"5px"}, style = {"margin-left": "50px", "font-size" : 32, "color":'yellow', 'font-weight': 'bold'}),
+                                   ], value = 0, inline=True, inputStyle={"margin-left": "20px", "margin-right":"5px"}, style = {"margin-left": "50px", "font-size" : 27, "color":'yellow', 'font-weight': 'bold'}),
                                
+                               html.Br(),
+                               html.Br(),
                                html.Br(),
                                
                                #description of summary statistics
                                html.H3("Summary Statistics Table:", style={"margin-left": "100px", 'color': colors['text']}),
                                
                                #summary statistics (table)
-                               html.Div(id = "table")]), width = {'order': 1, 'size': 6}),
+                               html.Div(id = "table", style={'height': '300px'})]), width = {'order': 1, 'size': 6}),
                                
                                
                                dbc.Col([
                         
                                    #weather conditions bar chart
-                                   dcc.Graph(id = 'weather_conditions_bargraph', figure={}, config={'displayModeBar': False})], width = {'order': 2, 'size': 6})], className = "g-0"
+                                   dcc.Graph(id = 'weather_conditions_bargraph', figure={}, config={'displayModeBar': False}, style={'height': '550px'})], width = {'order': 2, 'size': 6})], className = "g-0"
                            ),
 
                        dbc.Row(
@@ -159,7 +161,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                            [dbc.Col(html.Div(children = [
                                
                                #time series graph
-                               dcc.Graph(id='time_series_graph', figure={}, config={'displayModeBar': False})]), width = {'size': 12})], className="g-0", align="end"
+                               dcc.Graph(id='time_series_graph', figure={}, config={'displayModeBar': False}, style={'height': '520px'})]), width = {'size': 12})], className="g-0", align="end"
                        )
                        ])
                 
@@ -315,16 +317,15 @@ def update_graph(year, month, selected_rows):
     fig.update_layout({"plot_bgcolor": colors['background'], 'paper_bgcolor': "rgba(0,0,0,0)"},
                       #setting the title of the graph, as well as making it bold, and writting the graph name in red to match the variable of interest selection
                       title_text="Time Series Profile: <span style='color:yellow'>" + "<b>" + graph_name +"</b>" + "</span>",
-                      title={'x':0.5, 'y':0.955, 'xanchor':'center', 'yanchor':'top','font':{'size':33}},
-                      width = 2150,
-                      height = 620,
+                      title={'x':0.5, 'y':1, 'xanchor':'center', 'yanchor':'top','font':{'size':30}},
+                      autosize=True,
                       yaxis_ticksuffix=symbol,
-                      xaxis=dict(showgrid=False, tickfont=dict(size=15)),
+                      xaxis=dict(showgrid=False, tickfont=dict(size=14)),
                       yaxis=dict(showgrid=False, zeroline = False, tickmode = 'linear', dtick = ticks),
                       title_font_color = colors['text'],
                       font_color = colors['text'],
                       showlegend = False,
-                      font=dict(size=16)
+                      font=dict(size=14)
                       )
     
     #reformating the x-axis to make it look better
@@ -375,9 +376,7 @@ def update_graph(year, month, selected_rows):
     #editing the layout of the bargraph    
     fig1.update_layout({"plot_bgcolor": colors['background'], 'paper_bgcolor': "rgba(0,0,0,0)"},
                       title={'text':"Weather Conditions Bargraph:", 'x':0.5, 'y':0.925, 'xanchor':'center', 'yanchor':'top','font':{'size':33}},
-                      autosize = False,
-                      width = 1130,
-                      height = 550,
+                      autosize = True,
                       xaxis = dict(showgrid=False, visible = True, tickfont=dict(size=13)),
                       yaxis = dict(showgrid=False, visible = False , zeroline = False, tickmode = 'linear', dtick = ticks),
                       yaxis_range = [0,120],
@@ -395,7 +394,7 @@ def update_graph(year, month, selected_rows):
             dict(
                 source = Image.open(requests.get(url, stream = True).raw),
                 x = x,
-                y = y+28,
+                y = y+30,
                 xref = "x",
                 yref = "y",
                 sizex=20,
@@ -423,7 +422,7 @@ def update_graph(year, month, selected_rows):
     table = dash_table.DataTable(id='datatable',
                                  data=df1.to_dict('records'),
                                  columns=[{'name': col, 'id': col} for col in df1.columns],
-                                 style_cell={'textAlign': 'left', 'height':42, 'fontSize':23},
+                                 style_cell={'textAlign': 'left', 'height':30, 'fontSize':20},
                                  style_data={'color': colors['text'],'backgroundColor': colors['background'], 'font-weight': 'bold'},
                                  style_header={'color': colors['text'],'backgroundColor': colors['background'], 'fontWeight': 'bold'},
                                  style_data_conditional=[{'if' : {"row_index":table_index, "column_id":"Maximum"}, 'backgroundColor':table_background_color, 'color':max_color},
