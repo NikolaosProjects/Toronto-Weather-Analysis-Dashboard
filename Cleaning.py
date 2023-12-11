@@ -223,7 +223,7 @@ for i in range(len(full['Weather'])):
     if full['Weather'][i] == 'Thunderstorms' or full['Weather'][i] == 'Thunderstorms,Fog' or full['Weather'][i] == 'Thunderstorms,Heavy Rain' or full['Weather'][i] == 'Thunderstorms,Heavy Rain,Fog' or full['Weather'][i] == 'Thunderstorms,Moderate Rain' or full['Weather'][i] == 'Thunderstorms,Moderate Rain,Fog' or full['Weather'][i] == 'Thunderstorms,Rain' or full['Weather'][i] == 'Thunderstorms,Rain,Fog':
         full['Weather'][i] = 'Thunderstorm'
     elif full['Weather'][i] == 'No Precipitation or Fog':
-        full['Weather'][i] = 'Clear OR Cloudy'
+        full['Weather'][i] = 'Clear-OR-Cloudy'
     elif full['Weather'][i] == 'Rain' or full['Weather'][i] == 'Heavy Rain,Fog' or full['Weather'][i] == 'Moderate Rain' or full['Weather'][i] == 'Moderate Rain,Fog' or full['Weather'][i] == 'Rain,Fog':
         full['Weather'][i] = 'Rain'
     elif full['Weather'][i] == 'Rain,Snow' or full['Weather'][i] == 'Snow' or full['Weather'][i] == 'Moderate Snow' or full['Weather'][i] == 'Heavy Snow' or full['Weather'][i] == 'Snow,Blowing Snow':
@@ -231,4 +231,4 @@ for i in range(len(full['Weather'])):
     elif full['Weather'][i] == 'Freezing Rain' or full['Weather'][i] == 'Freezing Rain,Fog' or full['Weather'][i] == 'Freezing Rain,Snow':
         full['Weather'][i] = 'Freezing Rain'
     elif full['Weather'][i] == 'Fog' or full['Weather'][i] == 'Haze' or full['Weather'][i] == 'Haze,Blowing Snow':
-        full['Weather'][i] = 'Fog OR Haze'
+        full['Weather'][i] = 'Fog-OR-Haze'
