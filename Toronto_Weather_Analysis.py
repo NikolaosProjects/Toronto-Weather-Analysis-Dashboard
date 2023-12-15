@@ -77,7 +77,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                       #dashboard title
                       [html.H1("Toronto Weather Analysis"),
                        html.H6("Nikolaos Rizos | HBSc | LinkedIn:", style={'display':'inline-block'}),
-                       html.A('https://www.linkedin.com/in/rizosnikolaos1/', href='link', target="_blank"),                  
+                       html.A('https://www.linkedin.com/in/rizosnikolaos1/', href='https://www.linkedin.com/in/rizosnikolaos1/', target="https://www.linkedin.com/in/rizosnikolaos1/"),                  
                        
                        html.Br(),
                        html.Br(),
