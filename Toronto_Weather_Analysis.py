@@ -70,7 +70,7 @@ style_text={'text-align': 'left', 'color': colors['text']}
 #initializing the application object
 app = Dash(__name__, external_stylesheets = [dbc.themes.BOOTSTRAP])
 server = app.server
-app.title='Toronto Weather'
+app.title='Toronto Weather Dashboard'
 
 #setting up the layout of the application
 app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['background'], 'color': colors['text']}, children =
