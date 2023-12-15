@@ -84,7 +84,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                        
                        html.H5("[-> USE DESKTOP TO VIEW WEBSITE <-]", style = {'color' : 'red', 'font-weight': 'bold', "text-decoration": "underline"}),
                        html.H5("[-> SET PAGE ZOOM TO: 100% <-]", style = {'color' : 'red', 'font-weight': 'bold', "text-decoration": "underline"}),
-                       html.H6("(MAY TAKE UP TO 1 SECOND TO UPDATE THE GRAPHS AFTER CHANGING THE PARAMETERS)", style = {'color' : 'red', 'font-weight': 'bold', "text-decoration": "underline"}),
+                       html.H6("(Wait MAX of 5 SECONDS for the graphs to UPDATE)", style = {'color' : 'red', 'font-weight': 'bold', "text-decoration": "underline"}),
                       
                        html.Br(),
                        html.Br(),
