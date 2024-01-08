@@ -129,7 +129,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                                                                        {"label": "August", "value": 8},
                                                                        {"label": "September", "value": 9},
                                                                        {"label": "October", "value": 10},
-                                                                       {"label": "Novemver", "value": 11},
+                                                                       {"label": "November", "value": 11},
                                                                        {"label": "December", "value": 12}], multi=False, value=20, style = {'color' : colors['background']}),
                           
                            #populate dropdown box with selection from python function
