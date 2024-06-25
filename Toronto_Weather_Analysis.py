@@ -95,6 +95,11 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                        html.Div(style = {'margin-bottom': '0px', 'text-align': 'Center', 'font-size': '12px'}, children = [html.H6("GitHub:", style = {'display': 'inline-block', 'font-size': '12px', 'padding': '5px', 'margin-bottom': '0px'}),
                        html.A("https://github.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard", href="https://github.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard", target="https://github.com/NikolaosProjects/Toronto-Weather-Analysis-Dashboard", style = {'margin-bottom': '0px'})]),
                        
+                       html.Br(),
+
+                       html.Div(style = {'margin-bottom': '0px', 'text-align': 'Left', 'font-size': '22px', 'padding': '10px'}, children = [
+                       html.P("The goal of this project is to create an efficient online dashboard used to analyze and better understand Toronto's weather. The dashboard consists of three elegant visualizations: a summary statistics table, a weather conditions distribution, and and hourly evolution graph. The dashboard is designed to be user friendly, with the provided graphs presenting the weather information in a consice way that catches the eye. The user only needs to select a year, a month and a metric of interest, and the dashboard updates all three visualizations automatically. The entire dashboard, including the website, layout, colors, and all the charts and their attributes, are my own original work and made from scratch using only python and its libraries.", style = {'margin-bottom': '0px'})]),
+                       
                        #space between info text and dropwdown menus
                        html.Br(),
                        html.Br(),
@@ -148,7 +153,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                                html.Br(),
                                
                                #prompt for graph selection
-                               html.H3("Variable of Interest (Click One):", style={"margin-left": "140px"}),
+                               html.H3("Select a metric:", style={"margin-left": "140px"}),
                                
                                #graph selection (radioitems)
                                dcc.RadioItems(id = 'graph_selection', options = [
@@ -164,7 +169,7 @@ app.layout = html.Div(style={'text-align': 'Center', 'backgroundColor':colors['b
                                html.Br(),
                                
                                #description of summary statistics
-                               html.H3("Summary Statistics Table:", style={"margin-left": "100px", 'color': colors['text']}),
+                               html.H3("Summary Statistics:", style={"margin-left": "100px", 'color': colors['text']}),
                                
                                #summary statistics (table)
                                dcc.Loading(id = 'table&loading-anim', type = 'bar', style = {'margin-bottom': '100px'}, children = [html.Div(id = "table", style={'height': '300px'})])]), width = {'order': 1, 'size': 6}),
@@ -387,7 +392,7 @@ def update_graph(year, month, selected_rows):
     #updating the layout of the plot for stylistic reasons
     fig.update_layout({"plot_bgcolor": colors['background'], 'paper_bgcolor': "rgba(0,0,0,0)"},
                       #setting the title of the graph, as well as making it bold, and writting the graph name in red to match the variable of interest selection
-                      title_text="Time Series Profile: <span style='color:yellow'>" + "<b>" + graph_name +"</b>" + "</span>",
+                      title_text="Hourly Evolution: <span style='color:yellow'>" + "<b>" + graph_name +"</b>" + "</span>",
                       title={'x':0.5, 'y':0.98, 'xanchor':'center', 'yanchor':'top','font':{'size':30}},
                       autosize=True,
                       yaxis_ticksuffix=symbol,
@@ -449,7 +454,7 @@ def update_graph(year, month, selected_rows):
     
     #editing the layout of the bargraph    
     fig1.update_layout({"plot_bgcolor": colors['background'], 'paper_bgcolor': "rgba(0,0,0,0)"},
-                      title={'text':"Weather Conditions Bargraph:", 'x':0.5, 'y':0.925, 'xanchor':'center', 'yanchor':'top','font':{'size':33}},
+                      title={'text':"Weather Conditions - Hourly Distribution:", 'x':0.5, 'y':0.925, 'xanchor':'center', 'yanchor':'top','font':{'size':33}},
                       hovermode = False,
                       autosize = True,
                       xaxis = dict(showgrid=False, visible = True, tickfont=dict(size=13), fixedrange = True),
